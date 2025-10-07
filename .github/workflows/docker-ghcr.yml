@@ -36,7 +36,9 @@ jobs:
       # 5️⃣ Push Docker images to GHCR
       - name: Push Docker images
         run: |
-          IMAGE_NAME=ghcr.io/Rtvkongithub/my-nextjs-app
+          IMAGE_NAME=ghcr.io/rtvkongithub/my-nextjs-app
           docker push $IMAGE_NAME:latest
           docker push $IMAGE_NAME:${{ github.sha }}
+          docker push $IMAGE_NAME:latest
+          docker push $IMAGE_NAME${{ github.sha }} 
 
